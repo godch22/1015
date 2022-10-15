@@ -1,0 +1,90 @@
+# def solution(polynomial):
+#     answer = ''
+#     polynomial = polynomial.replace("+", '')
+#     p = polynomial.split()
+#     constant = 0
+#     term1 = []
+#     for i in p:
+#         if i.isdigit():
+#             constant += int(i)
+#         else:
+#             term1.append(i)
+#
+#
+#     term1.sort(key = lambda x : x[-1])
+#     result = []
+#     for t in term1:
+#         if len(result) == 0:
+#             result.append(t)
+#         elif t[-1] == result[-1][-1]:
+#             last = result.pop()
+#             if len(t) == 1:
+#                 t = '1'+t
+#             if len(last) == 1:
+#                 last = '1' + last
+#             result.append(str(int(t[:-1]) + int(last[:-1]))+last[-1])
+#         else:
+#             result.append(t)
+#     for i in result:
+#         answer += i + ' + '
+#     if constant != 0:
+#         return answer + str(constant)
+#
+#     return answer[:-3]
+# p = "3x + 7 + x"
+# print(solution(p))
+
+
+
+
+
+
+
+
+
+
+# 캐릭터의 좌표
+# def solution(keyinput, board):
+#     pos = [0,0] #현재 위치
+#     limit_x = (board[0] - 1) // 2 # x 의한계치
+#     limit_y = (board[1] - 1) // 2 # y의 한계치
+#
+#     lr = {'left' : -1, "right" : 1}
+#     ud = {"up" : 1, "down" : -1}
+#
+#     for k in keyinput:
+#         if k in lr:               #left, right
+#             if abs(pos[0] + lr[k]) > limit_x:
+#                 continue
+#             pos[0] += lr[k]
+#         elif k in ud:             # up, down
+#             if abs(pos[1] + ud[k]) > limit_y:
+#                 continue
+#             pos[1] += ud[k]
+#     return pos
+
+
+
+
+# 숫자 짝꿍
+# def solution(X, Y):
+#     answer = ''
+#     mate = []   #짝궁이 될 수들을 모아줄 공간
+#     X_cnt = []              # X에 0~9까지의 수들이 몇개씩 있는지 넣어준다.
+#     Y_cnt = []              # Y에 0~9까지의 수들이 몇개씩 있는지 넣어준다.
+#     for i in range(10):
+#         X_cnt.append(X.count(str(i)))
+#         Y_cnt.append(Y.count(str(i)))
+#     for j in range(10):
+#         if X_cnt[j] > 0 and Y_cnt[j] > 0:
+#             mate += [str(j)] * min(X_cnt[j], Y_cnt[j])
+#     mate.sort(reverse = True)
+#     mate = ''.join(mate)
+# 
+#     if len(mate) == 0:
+#         return '-1'
+#     elif mate.count('0') == len(mate):
+#         return '0'
+#     else:
+#         return mate
+
